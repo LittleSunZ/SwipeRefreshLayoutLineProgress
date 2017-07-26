@@ -1,7 +1,6 @@
 
-/**
- * 中间向两端或两端向中间并发进度条
- */
+中间向两端或两端向中间并发进度条
+ ```
 public class BothLineProgress extends LinearLayout {
 
     private Context context;
@@ -172,9 +171,6 @@ public class BothLineProgress extends LinearLayout {
 
     /**
      * 进度条处理完成回调接口
-     * @author Jaiky
-     * @date 2015年7月1日
-     * PS: Not easy to write code, please indicate.
      */
     public interface OnBothLineProgressFinishListener {
         public void onFinished(boolean isFinished);
@@ -192,14 +188,14 @@ public class BothLineProgress extends LinearLayout {
     }
 }
 
-<br/>
+//使用方法
 swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                //500毫秒完成
+                //开始动画，500毫秒完成
                 bp.startRunProgress(500L, 10, BothLineProgress.MODE_BOTH_TO_CENTER);
             }
-        });
+});
 bp.setOnBothLineProgressFinishListener(new BothLineProgress.OnBothLineProgressFinishListener() {
 
     @Override
@@ -210,3 +206,4 @@ bp.setOnBothLineProgressFinishListener(new BothLineProgress.OnBothLineProgressFi
         }
     }
 });
+```
